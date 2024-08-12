@@ -4,19 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorelUserinfoRequest;
 use App\Http\Requests\UpdateUserinfoRequest;
-use App\Models\Userinfo;
+use App\Models\UserInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Spatie\LaravelIgnition\Http\Requests\UpdateConfigRequest;
 
-class UserinfoController extends Controller
+class UserInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $userinfos = Userinfo::latest()->paginate(20);
+        $userinfos = UserInfo::latest()->paginate(20);
 
         return view('admin.userinfo.index',['userinfos'=>$userinfos]);
     }
@@ -38,7 +37,7 @@ class UserinfoController extends Controller
             $name = $request->file('image')->getClientOriginalName();
             $path = $request->file('image')->storeAs('post-photos', $name);
         }
-        Userinfo::create([
+        UserInfo::create([
             "firs_name" =>$request->firs_name,
             "last_name" =>$request->last_name,
             "middle_name" =>$request->middle_name,
@@ -65,7 +64,7 @@ class UserinfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Userinfo $userinfo)
+    public function edit(UserInfo $userinfo)
     {
         return view('admin.userinfo.edit',['userinfo'=>$userinfo]);
     }
@@ -73,7 +72,7 @@ class UserinfoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserinfoRequest $request, Userinfo $userinfo)
+    public function update(UpdateUserinfoRequest $request, UserInfo $userinfo)
     {
         if($request->hasFile('image')){
             $name = $request->file('image')->getClientOriginalName();
@@ -98,7 +97,7 @@ class UserinfoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Userinfo $userinfo)
+    public function destroy(UserInfo $userinfo)
     {
         if(isset($userinfo->image)){
             Storage::delete($userinfo->image);

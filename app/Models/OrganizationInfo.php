@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Organization extends Model
+class OrganizationInfo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'userinfo_id',
+        'user_info_id',
         'higher_organization',
         'organization_type',
         'organization_name',
@@ -19,4 +19,8 @@ class Organization extends Model
         'region',
         'district'
     ];
+
+    public function userinfo(){
+        return $this->belongsTo(UserInfo::class);
+    }
 }

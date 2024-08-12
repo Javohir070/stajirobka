@@ -25,7 +25,25 @@
         <li>
             <a href="{{ route('userinfo.index') }}" class="side-menu side-menu{{ request()->is('userinfo*') ? '--active':'' }}">
                 <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> Stajirobka </div>
+                <div class="side-menu__title"> Userlar ma'lumotlar </div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('organizationinfo.index') }}" class="side-menu side-menu{{ request()->is('organizationinfo*') ? '--active':'' }}">
+                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                <div class="side-menu__title"> Tashkilotlar ma'lumotlar </div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('internshipinfo.index') }}" class="side-menu side-menu{{ request()->is('internshipinfo*') ? '--active':'' }}">
+                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                <div class="side-menu__title"> Turlar ma'lumotlar </div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('internshipfile.index') }}" class="side-menu side-menu{{ request()->is('internshipfile*') ? '--active':'' }}">
+                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
+                <div class="side-menu__title"> Turlar filelar </div>
             </a>
         </li>
     @endrole

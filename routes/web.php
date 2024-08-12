@@ -2,6 +2,9 @@
 
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InternshipFileController;
+use App\Http\Controllers\InternshipInfoController;
+use App\Http\Controllers\OrganizationInfoController;
 use App\Http\Controllers\UserinfoController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,11 +35,11 @@ Route::get('/', [HomeController::class,'index'])->middleware('auth')->name('home
 Route::middleware('auth')->group(function () {
     Route::post('password/change', [UserController::class, 'changePassword'])->name('password.change');
     Route::get('/export-xodimlar', [XodimlarController::class, 'exporxodimlar']);
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/profileview', [UserController::class, 'profileview'])->name('profileview.index');
-    Route::get('/reformat-phones', [XodimlarController::class, 'reformatPhones']);
+    // Route::get('/reformat-phones', [XodimlarController::class, 'reformatPhones']);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/searchxodimlar', [XodimlarController::class, 'searchxodimlar'])->name('searchxodimlar');
@@ -45,7 +48,10 @@ Route::middleware('auth')->group(function () {
    
     Route::resources([
         'xodimlar' => XodimlarController::class,
-        'userinfo' => UserinfoController::class
+        'userinfo' => UserInfoController::class,
+        'organizationinfo' => OrganizationInfoController::class,
+        'internshipinfo' => InternshipInfoController::class,
+        'internshipfile' => InternshipFileController::class
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {

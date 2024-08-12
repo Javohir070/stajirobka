@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('internshipinfos', function (Blueprint $table) {
+        Schema::create('internship_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userinfo_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
             $table->integer('order_period');
             $table->string('tracking_decision_number');
             $table->string('tracking_decision_date');
@@ -47,6 +47,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('internshipinfos');
+        Schema::dropIfExists('internship_files');
     }
 };

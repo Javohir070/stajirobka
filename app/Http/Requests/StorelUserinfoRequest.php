@@ -26,7 +26,7 @@ class StorelUserinfoRequest extends FormRequest
             'last_name' => 'required|max:255',
             'middle_name' => 'required|max:255',
             'birthday' => 'required|max:255',
-            'jshshri' => 'required|size:14|unique:userinfos',
+            'jshshri' => 'required|size:14|unique:user_infos',
             'gender' => 'required|max:255',
             'phone' => 'required|max:255',
             'academic_degree' => 'required|max:255',
