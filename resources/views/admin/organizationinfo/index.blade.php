@@ -52,7 +52,7 @@
                     <tr class="intro-x">
                         <td>{{$loop->index+1}}</td>
                         <td>
-                            <a href="#" class="font-medium">Qayumov Javohir</a>
+                            <a href="#" class="font-medium">{{ $organizationinfo->userinfo->firs_name }} {{ $organizationinfo->userinfo->last_name }}</a>
                         </td>
                         <td>
                             <a href="" class="font-medium ">{{ $organizationinfo->higher_organization }}</a>

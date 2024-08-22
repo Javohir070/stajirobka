@@ -36,6 +36,7 @@ class InternshipInfoController extends Controller
 
         InternshipInfo::create([
             "user_info_id" => $request->user_info_id,
+            "order_number" => $request->order_number,
             "selection_type" => $request->selection_type,
             "selection_year" => $request->selection_year,
             "year_funded" => $request->year_funded,
@@ -49,16 +50,16 @@ class InternshipInfoController extends Controller
             "age" => $request->age,
         ]);
 
-        return redirect()->route('internshipinfo.index')->with('status', "Ma'lumotlar muvaffaqiyatli qo'shildi.");
+        return redirect()->route('userinfo.index')->with('status', "Ma'lumotlar muvaffaqiyatli qo'shildi.");
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(InternshipInfo  $internshipinfo)
     {
-        //
+        return view('admin.internshipinfo.show',['internshipinfo'=>$internshipinfo]);
     }
 
     /**
@@ -77,6 +78,7 @@ class InternshipInfoController extends Controller
     {
         $internshipinfo->update([
             "user_info_id" => $request->user_info_id,
+            "order_number" => $request->order_number,
             "selection_type" => $request->selection_type,
             "selection_year" => $request->selection_year,
             "year_funded" => $request->year_funded,
@@ -90,7 +92,7 @@ class InternshipInfoController extends Controller
             "age" => $request->age,
         ]);
 
-        return redirect()->route('internshipinfo.index')->with('status', "Ma'lumotlar muvaffaqiyatli qo'shildi.");
+        return redirect()->route('userinfo.index')->with('status', "Ma'lumotlar muvaffaqiyatli qo'shildi.");
 
     }
 

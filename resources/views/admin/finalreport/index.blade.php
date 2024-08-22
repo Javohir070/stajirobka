@@ -5,7 +5,7 @@
 <div class="content">
     <div class="flex justify-between align-center mt-10">
 
-        <h2 class="intro-y text-lg font-medium">Tashkilotlar ma'lumotlar</h2>
+        <h2 class="intro-y text-lg font-medium">Yakuniy hisoboti</h2>
 
         <!-- <a href="{{ route("xodimlar.create") }}" class="button w-24 bg-theme-1 text-white">
             Qo'shish
@@ -21,7 +21,7 @@
         </div>
         <div>
             <div> 
-                <a href="{{ route("internshipfile.create") }}" class="button w-24 bg-theme-1 text-white">
+                <a href="{{ route("finalreport.create") }}" class="button w-24 bg-theme-1 text-white">
                     Qo'shish
                 </a>
             </div>

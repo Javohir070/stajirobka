@@ -21,4 +21,21 @@ class UserInfo extends Model
         'certificate',
         'image'
     ];
+
+    public function internshipfiles()
+    {
+        return $this->hasMany(InternshipFile::class);
+    }
+
+    public function internshipinfos()
+    {
+        return $this->hasMany(InternshipInfo::class);
+    }
+
+    public function organizationinfos()
+    {
+        return $this->hasMany(OrganizationInfo::class);
+    }
+
+    
 }

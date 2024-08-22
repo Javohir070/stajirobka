@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organization_infos', function (Blueprint $table) {
+        Schema::create('final_reports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
             $table->string('order_number');
-            $table->string('higher_organization');
-            $table->string('organization_type');
-            $table->string('organization_name', 1024);
-            $table->string('position');
-            $table->string('STIR');
-            $table->string('region');
-            $table->string('district');
+            $table->string('follow_up_letter');
+            $table->string('council_decision');
+            $table->string('scientific_report');
+            $table->string('financial_reporting');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organization_infos');
+        Schema::dropIfExists('final_reports');
     }
 };

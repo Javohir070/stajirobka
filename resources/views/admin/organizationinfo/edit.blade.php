@@ -43,6 +43,26 @@
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot
+                    </label>
+                    <select name="order_number" value="{{ old('order_number') }}"  class="input border w-full mt-2" required="">
+
+                        <option value="">tanlov turini tanlang</option>
+
+                        <option value="Birinchi tanlov ">Birinchi tanlov </option>
+
+                        <option value="Ikkinchi tanlov">Ikkinchi tanlov</option>
+
+                        <option value="Uchinchi tanlov">Uchinchi tanlov</option>
+
+                    </select> 
+                    @error('order_number')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Yuqori turuvchi muassasa
                     </label>
                     <input type="text" name="higher_organization" value="{{ $organizationinfo->higher_organization }}"

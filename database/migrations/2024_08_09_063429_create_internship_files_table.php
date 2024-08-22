@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('internship_files', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
+            $table->string('order_number');
             $table->integer('order_period');
+            $table->string('tracking_app');
+            $table->string('tracking_number');
             $table->string('tracking_decision_number');
             $table->string('tracking_decision_date');
             $table->string('special_expert_number');
@@ -33,11 +36,8 @@ return new class extends Migration
             $table->string('scientific_letter_date');
             $table->string('money_saved');
             $table->string('total_payment');
-            $table->string('follow_up_letter');
-            $table->string('council_decision');
-            $table->string('scientific_report');
-            $table->string('financial_reporting');
-            $table->text('sxplanation');
+            $table->string('proposal_and_program_file');
+            $table->string('quadripartite_agreement_file');
             $table->timestamps();
         });
     }

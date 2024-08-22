@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorelUserinfoRequest;
 use App\Http\Requests\UpdateUserinfoRequest;
+use App\Models\FinalReport;
+use App\Models\InternshipFile;
+use App\Models\InternshipInfo;
+use App\Models\OrganizationInfo;
 use App\Models\UserInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +23,8 @@ class UserInfoController extends Controller
 
         return view('admin.userinfo.index',['userinfos'=>$userinfos]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -56,9 +62,20 @@ class UserInfoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(UserInfo $userinfo)
     {
-        //
+        $userinfoId = $userinfo->id;
+        $organizationinfos = OrganizationInfo::where('user_info_id', $userinfoId)->get();
+        $internshipinfos = InternshipInfo::where('user_info_id', $userinfoId)->get();
+        $internshipfiles = InternshipFile::where('user_info_id', $userinfoId)->get(); 
+        $finalreports = FinalReport::where('user_info_id', $userinfoId)->get();
+        return view('admin.userinfo.show', [
+            'userinfo' => $userinfo,
+            'organizationinfos' => $organizationinfos,
+            'internshipinfos'=>$internshipinfos,
+            'internshipfiles' => $internshipfiles,
+            'finalreports' => $finalreports
+        ]);
     }
 
     /**

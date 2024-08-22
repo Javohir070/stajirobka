@@ -39,6 +39,26 @@
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot
+                    </label>
+                    <select name="order_number" value="{{ old('order_number') }}"  class="input border w-full mt-2" required="">
+
+                        <option value="">tanlov turini tanlang</option>
+
+                        <option value="Birinchi tanlov">Birinchi tanlov </option>
+
+                        <option value="Ikkinchi tanlov">Ikkinchi tanlov</option>
+
+                        <option value="Uchinchi tanlov">Uchinchi tanlov</option>
+
+                    </select> 
+                    @error('order_number')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Yuqori turuvchi muassasa
                     </label>
                     <input type="text" name="higher_organization" value="{{ old('higher_organization') }}" class="input w-full border mt-2" required="">
@@ -53,7 +73,7 @@
                     </label>
                     <select name="organization_type" value="{{ old('organization_type') }}" id="science-sub-category" class="input border w-full mt-2" required="">
 
-                        <option value="">muassasa turi</option>
+                        <option value="">muassasa turini tanlang</option>
 
                         <option value="Oliy ta’lim">Oliy ta’lim</option>
 
@@ -99,13 +119,12 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Joylashgan viloyati
                     </label>
-                    <select name="region" value="{{ old('region') }}" id="science-sub-category" class="input border w-full mt-2" required="">
+                    <select id="viloyat" name="region"  value="{{ old('region') }}" id="science-sub-category" class="input border w-full mt-2" required="">
 
-                        <option value="">joylashgan viloyati tanlang</option>
-
-                        <option value="Xorazm viloyati">Xorazm viloyati</option>
-
-                        <option value="Navoiy viloyati">Navoiy viloyati</option>
+                    <option value="">Viloyatni tanlang</option>
+                    @foreach($viloyatlar as $viloyat)
+                        <option value="{{ $viloyat->viloyat_id }}">{{ $viloyat->viloyat_nomi }}</option>
+                    @endforeach
 
                     </select>
                     @error('region')
@@ -117,16 +136,8 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Joylashgan tumani
                     </label>
-                    <select name="district" value="{{ old('district') }}" id="science-sub-category" class="input border w-full mt-2" required="">
-
-                        <option value="">joylashgan tumani tanlang</option>
-
-                        <option value="Bogʻot tumani">Bogʻot tumani</option>
-                        
-                        <option value="Gurlan tumani">Gurlan tumani</option>
-
-                        <option value="Xonqa tumani">Xonqa tumani</option>
-
+                    <select id="tuman" name="district" class="input border w-full mt-2">
+                        <option value="">Avval viloyatni tanlang</option>
                     </select>
                     @error('district')
                         <div class="error">{{ $message }}</div>

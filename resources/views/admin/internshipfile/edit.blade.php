@@ -44,12 +44,54 @@
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot
+                    </label>
+                    <select name="order_number" value="{{ old('order_number') }}"  class="input border w-full mt-2" required="">
+
+                        <option value="">tanlov turini tanlang</option>
+
+                        <option value="Birinchi tanlov ">Birinchi tanlov </option>
+
+                        <option value="Ikkinchi tanlov">Ikkinchi tanlov</option>
+
+                        <option value="Uchinchi tanlov">Uchinchi tanlov</option>
+
+                    </select> 
+                    @error('order_number')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Kuzatuv kengashida tasdiqlangan
                         muddati
                     </label>
                     <input type="text" name="order_period" value="{{ $internshipfile->order_period }}"
                         class="input w-full border mt-2" required="">
                     @error('order_period')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv kengashining ilovasi
+                    </label>
+                    <input type="text" name="tracking_app" value="{{ $internshipfile->tracking_app }}"
+                        class="input w-full border mt-2" required="">
+                    @error('tracking_app')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv kengashidagi tartib raqami
+                    </label>
+                    <input type="text" name="tracking_number" value="{{ $internshipfile->tracking_number }}"
+                        class="input w-full border mt-2" required="">
+                    @error('tracking_number')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -259,55 +301,22 @@
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv xati
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Buyurtmachi tomonidan Agentlikka yuboriladigan kafolat xati, xarajatlar asosnomasi, taklifnoma va dastur
                     </label>
-                    <input type="file" name="follow_up_letter" value="{{ $internshipfile->follow_up_letter }}"
+                    <input type="file" name="proposal_and_program_file" value="{{ old('proposal_and_program_file') }}"
                         class="input w-full border mt-2" required="">
-                    @error('follow_up_letter')
+                    @error('proposal_and_program_file')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ilmiy kengash qarori
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>  Ilmiy stajirovka bo‘yicha 4 tomonlama shartnoma
                     </label>
-                    <input type="file" name="council_decision" value="{{ $internshipfile->council_decision }}"
+                    <input type="file" name="quadripartite_agreement_file" value="{{ old('quadripartite_agreement_file') }}"
                         class="input w-full border mt-2" required="">
-                    @error('council_decision')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-6 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Ilmiy hisoboti
-                    </label>
-                    <input type="file" name="scientific_report" value="{{ $internshipfile->scientific_report }}"
-                        class="input w-full border mt-2" required="">
-                    @error('scientific_report')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-6 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Moliyaviy hisobot
-                    </label>
-                    <input type="file" name="financial_reporting" value="{{ $internshipfile->financial_reporting }}"
-                        class="input w-full border mt-2" required="">
-                    @error('financial_reporting')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-12 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Izoh
-                    </label>
-                    <textarea name="sxplanation" id="" cols="20"  rows="5"
-                        class="input w-full border mt-2">{{ $internshipfile->sxplanation }}</textarea>
-                    @error('sxplanation')
+                    @error('quadripartite_agreement_file')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>

@@ -23,8 +23,9 @@ class StorelInternshipFileRequest extends FormRequest
     {
         return [
             'user_info_id' => 'required|max:255',
-            'user_infos' => 'required|max:255',
             'order_period' => 'required|max:255',
+            "tracking_app" => 'required|max:255',
+            "tracking_number" => 'required|max:255', 
             'tracking_decision_number' => 'required|max:255',
             'tracking_decision_date' => 'required|max:255',
             'special_expert_number' => 'required|max:255',
@@ -43,11 +44,8 @@ class StorelInternshipFileRequest extends FormRequest
             'scientific_letter_date' => 'required|max:255',
             'money_saved' => 'required|max:255',
             'total_payment' => 'required|max:255',
-            'follow_up_letter' => 'file|mimes:pdf,doc,docx|max:2048',
-            'council_decision' => 'file|mimes:pdf,doc,docx|max:2048',
-            'scientific_report' => 'file|mimes:pdf,doc,docx|max:2048',
-            'financial_reporting' => 'file|mimes:pdf,doc,docx|max:2048',
-            'sxplanation' => 'required|max:255',
+            'proposal_and_program_file' => 'file|mimes:pdf,doc,docx|max:2048',
+            'quadripartite_agreement_file' => 'file|mimes:pdf,doc,docx|max:2048',
         ];
     }
 }

@@ -5,7 +5,7 @@
 
 <div class="flex justify-between align-center mt-10">
 
-    <h2 class="intro-y text-lg font-medium">Xodim  tahrirlash</h2>
+    <h2 class="intro-y text-lg font-medium">Yosh olim  tahrirlash</h2>
 
 
 

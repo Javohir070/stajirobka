@@ -24,28 +24,35 @@
     @role('super-admin')
         <li>
             <a href="{{ route('userinfo.index') }}" class="side-menu side-menu{{ request()->is('userinfo*') ? '--active':'' }}">
-                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> Userlar ma'lumotlar </div>
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Yosh olim to‘g‘risida ma’lumot </div>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="{{ route('organizationinfo.index') }}" class="side-menu side-menu{{ request()->is('organizationinfo*') ? '--active':'' }}">
-                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> Tashkilotlar ma'lumotlar </div>
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot </div>
             </a>
         </li>
         <li>
             <a href="{{ route('internshipinfo.index') }}" class="side-menu side-menu{{ request()->is('internshipinfo*') ? '--active':'' }}">
-                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> Turlar ma'lumotlar </div>
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Tanlov to‘g‘risida ma’lumot </div>
             </a>
         </li>
         <li>
             <a href="{{ route('internshipfile.index') }}" class="side-menu side-menu{{ request()->is('internshipfile*') ? '--active':'' }}">
-                <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                <div class="side-menu__title"> Turlar filelar </div>
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Moliyalashtirish to‘g‘risida ma’lumot </div>
             </a>
         </li>
+
+        <li>
+            <a href="{{ route('finalreport.index') }}" class="side-menu side-menu{{ request()->is('finalreport*') ? '--active':'' }}">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Yakuniy hisoboti </div>
+            </a>
+        </li> -->
     @endrole
     
    

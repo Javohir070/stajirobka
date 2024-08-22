@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('internship_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
+            $table->string('order_number');
             $table->string('selection_type',255);
             $table->string('selection_year',255);
             $table->string('year_funded');

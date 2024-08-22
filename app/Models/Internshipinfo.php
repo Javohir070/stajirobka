@@ -11,6 +11,7 @@ class InternshipInfo extends Model
 
     protected $fillable =[
         'user_info_id',
+        'order_number',
         'selection_type',
         'selection_year',
         'year_funded',
@@ -25,6 +26,8 @@ class InternshipInfo extends Model
     ];
 
     public function userinfo(){
-        return $this->belongsTo(UserInfo::class);
+        return $this->belongsTo(UserInfo::class, 'user_info_id');
     }
+
+    
 }

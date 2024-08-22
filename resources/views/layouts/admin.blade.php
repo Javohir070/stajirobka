@@ -205,9 +205,33 @@
             </div>
             <!-- END: Content -->
         </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- BEGIN: JS Assets-->
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script>
+        <!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script> -->
         <script src="/admin/dist/js/app.js"></script>
+
+        <script type="text/javascript">
+            $('#viloyat').change(function() {
+                var viloyatID = $(this).val();
+                if (viloyatID) {
+                    $.ajax({
+                        url: '/get-tumanlar?viloyat_id=' + viloyatID,
+                        type: 'GET',
+                        success: function(data) {
+                            $('#tuman').empty();
+                            $('#tuman').append('<option value="">Tumanni tanlang</option>');
+                            $.each(data, function(key, value) {
+                                $('#tuman').append('<option value="'+ value.tuman_id +'">'+ value.tuman_nomi +'</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#tuman').empty();
+                    $('#tuman').append('<option value="">Avval viloyatni tanlang</option>');
+                }
+            });
+        </script>
     </body>
 </html>

@@ -11,7 +11,10 @@ class InternshipFile extends Model
 
     protected $fillable = [
             'user_info_id',
+            'order_number',
             'order_period',
+            'tracking_app',
+            'tracking_number',
             'tracking_decision_number',
             'tracking_decision_date',
             'special_expert_number',
@@ -30,14 +33,11 @@ class InternshipFile extends Model
             'scientific_letter_date',
             'money_saved',
             'total_payment',
-            'follow_up_letter',
-            'council_decision',
-            'scientific_report',
-            'financial_reporting',
-            'sxplanation'
+            'proposal_and_program_file',
+            'quadripartite_agreement_file',
         ];
         
         public function userinfo(){
-            return $this->belongsTo(UserInfo::class);
+            return $this->belongsTo(UserInfo::class, 'user_info_id');
         }
 }

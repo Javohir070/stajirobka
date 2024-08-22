@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\FinalReportController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InternshipFileController;
 use App\Http\Controllers\InternshipInfoController;
@@ -39,19 +39,22 @@ Route::middleware('auth')->group(function () {
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/profileview', [UserController::class, 'profileview'])->name('profileview.index');
+    Route::get('/get-tumanlar', [OrganizationInfoController::class, 'getTumanlar']);
     // Route::get('/reformat-phones', [XodimlarController::class, 'reformatPhones']);
 });
 Route::middleware('auth')->group(function () {
     Route::get('/searchxodimlar', [XodimlarController::class, 'searchxodimlar'])->name('searchxodimlar');
     Route::get('/searchuser', [UserController::class, 'searchuser'])->name('searchuser');
     Route::get('/searchxodim', [XodimlarController::class, 'searchEmployees'])->name('searchxodim');
+    Route::get('/userall', [UserInfoController::class, 'userall'])->name('userall');
    
     Route::resources([
         'xodimlar' => XodimlarController::class,
         'userinfo' => UserInfoController::class,
         'organizationinfo' => OrganizationInfoController::class,
         'internshipinfo' => InternshipInfoController::class,
-        'internshipfile' => InternshipFileController::class
+        'internshipfile' => InternshipFileController::class,
+        'finalreport' => FinalReportController::class
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {

@@ -23,6 +23,7 @@ class StorelInternshipInfoRequest extends FormRequest
     {
         return [
             'user_info_id' => 'required|max:255',
+            "order_number" => 'required|max:255',
             'selection_type' => 'required|max:255',
             'selection_year' => 'required|max:255',
             'year_funded' => 'required|max:255',

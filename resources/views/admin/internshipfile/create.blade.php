@@ -28,12 +28,33 @@
                         <option value="">F.I.Sh </option>
                         @foreach ($userinfos as $userinfo)
                             <option value="{{ $userinfo->id }}">{{ $userinfo->firs_name }} {{ $userinfo->last_name }}
-                                {{ $userinfo->middle_name }}</option>
+                                {{ $userinfo->middle_name }}
+                            </option>
 
                         @endforeach
 
                     </select>
                     @error('user_info_id')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot
+                    </label>
+                    <select name="order_number" value="{{ old('order_number') }}"  class="input border w-full mt-2" required="">
+
+                        <option value="">tanlov turini tanlang</option>
+
+                        <option value="Birinchi tanlov ">Birinchi tanlov </option>
+
+                        <option value="Ikkinchi tanlov">Ikkinchi tanlov</option>
+
+                        <option value="Uchinchi tanlov">Uchinchi tanlov</option>
+
+                    </select> 
+                    @error('order_number')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -46,6 +67,36 @@
                     <input type="text" name="order_period" value="{{ old('order_period') }}"
                         class="input w-full border mt-2" required="">
                     @error('order_period')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv kengashining ilovasi
+                    </label>
+                    <!-- <input type="text" name="tracking_app" value="{{ old('tracking_app') }}"
+                        class="input w-full border mt-2" required=""> -->
+
+                    <select name="tracking_app" value="{{ old('tracking_app') }}" class="science-sub-ilova input border w-full mt-2"
+                        required="">
+
+                        <option value="">Kuzatuv kengashining ilovasini tanlang</option>
+
+                    </select>
+
+                    @error('tracking_app')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="w-full col-span-6 ">
+                    <label class="flex flex-col sm:flex-row"> <span
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv kengashidagi tartib raqami
+                    </label>
+                    <input type="text" name="tracking_number" value="{{ old('tracking_number') }}"
+                        class="input w-full border mt-2" required="">
+                    @error('tracking_number')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -67,7 +118,7 @@
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Jamg‘arma Kuzatuv kengashi qarori
                         sanasi
                     </label>
-                    <input type="text" name="tracking_decision_date" value="{{ old('tracking_decision_date') }}"
+                    <input type="date" name="tracking_decision_date" value="{{ old('tracking_decision_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('tracking_decision_date')
                         <div class="error">{{ $message }}</div>
@@ -113,7 +164,7 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Agentlik buyrug‘i sanasi
                     </label>
-                    <input type="text" name="agency_order_date" value="{{ old('agency_order_date') }}"
+                    <input type="date" name="agency_order_date" value="{{ old('agency_order_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('agency_order_date')
                         <div class="error">{{ $message }}</div>
@@ -135,7 +186,7 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Shartnoma sanasi
                     </label>
-                    <input type="text" name="contract_date" value="{{ old('contract_date') }}"
+                    <input type="date" name="contract_date" value="{{ old('contract_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('contract_date')
                         <div class="error">{{ $message }}</div>
@@ -168,7 +219,7 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Sanasi
                     </label>
-                    <input type="text" name="date" value="{{ old('date') }}" class="input w-full border mt-2"
+                    <input type="date" name="date" value="{{ old('date') }}" class="input w-full border mt-2"
                         required="">
                     @error('date')
                         <div class="error">{{ $message }}</div>
@@ -202,7 +253,7 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Moliyaviy hisobot xati sanasi
                     </label>
-                    <input type="text" name="financial_letter_date" value="{{ old('financial_letter_date') }}"
+                    <input type="date" name="financial_letter_date" value="{{ old('financial_letter_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('financial_letter_date')
                         <div class="error">{{ $message }}</div>
@@ -224,7 +275,7 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Ilmiy hisobot xati sanasi
                     </label>
-                    <input type="text" name="scientific_letter_date" value="{{ old('scientific_letter_date') }}"
+                    <input type="date" name="scientific_letter_date" value="{{ old('scientific_letter_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('scientific_letter_date')
                         <div class="error">{{ $message }}</div>
@@ -255,55 +306,22 @@
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Kuzatuv xati
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Buyurtmachi tomonidan Agentlikka yuboriladigan kafolat xati, xarajatlar asosnomasi, taklifnoma va dastur
                     </label>
-                    <input type="file" name="follow_up_letter" value="{{ old('follow_up_letter') }}"
+                    <input type="file" name="proposal_and_program_file" value="{{ old('proposal_and_program_file') }}"
                         class="input w-full border mt-2" required="">
-                    @error('follow_up_letter')
+                    @error('proposal_and_program_file')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="w-full col-span-6 ">
                     <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Ilmiy kengash qarori
+                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>  Ilmiy stajirovka bo‘yicha 4 tomonlama shartnoma
                     </label>
-                    <input type="file" name="council_decision" value="{{ old('council_decision') }}"
+                    <input type="file" name="quadripartite_agreement_file" value="{{ old('quadripartite_agreement_file') }}"
                         class="input w-full border mt-2" required="">
-                    @error('council_decision')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-6 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Ilmiy hisoboti
-                    </label>
-                    <input type="file" name="scientific_report" value="{{ old('scientific_report') }}"
-                        class="input w-full border mt-2" required="">
-                    @error('scientific_report')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-6 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Moliyaviy hisobot
-                    </label>
-                    <input type="file" name="financial_reporting" value="{{ old('financial_reporting') }}"
-                        class="input w-full border mt-2" required="">
-                    @error('financial_reporting')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="w-full col-span-12 ">
-                    <label class="flex flex-col sm:flex-row"> <span
-                            class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span>Izoh
-                    </label>
-                    <textarea name="sxplanation" id="" cols="20" value="{{ old('sxplanation') }}" rows="5"
-                        class="input w-full border mt-2"></textarea>
-                    @error('sxplanation')
+                    @error('quadripartite_agreement_file')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -323,6 +341,28 @@
     </div>
 </div>
 
+<script>
+    // Boshlang'ich va tugash yillari
+    var startYear = 1;
+    var endYear = 30;
+
+    // Barcha class nomi 'science-sub-ilova' bo'lgan select elementlarini olish
+    var selects = document.getElementsByClassName('science-sub-ilova');
+
+    // Har bir select elementi uchun sikl
+    for (var i = 0; i < selects.length; i++) {
+        var select = selects[i];
+
+        // Har bir select elementi uchun yillarni qo'shish
+        for (var year = startYear; year <= endYear; year++) {  // to'g'ri shart va inkrement
+            var option = document.createElement('option');
+            option.value = year +"-ilova";
+            option.text = year +"-ilova";
+            option.className = 'year-option'; // Class qo'shish
+            select.appendChild(option);
+        }
+    }
+</script>
 
 
 @endsection
