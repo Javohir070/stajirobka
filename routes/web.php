@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InternshipFileController;
 use App\Http\Controllers\InternshipInfoController;
 use App\Http\Controllers\OrganizationInfoController;
-use App\Http\Controllers\UserinfoController;
+use App\Http\Controllers\UserInfoController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RoleController;
