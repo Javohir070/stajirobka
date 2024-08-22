@@ -223,7 +223,7 @@
                             $('#tuman').empty();
                             $('#tuman').append('<option value="">Tumanni tanlang</option>');
                             $.each(data, function(key, value) {
-                                $('#tuman').append('<option value="'+ value.tuman_id +'">'+ value.tuman_nomi +'</option>');
+                                $('#tuman').append('<option value="'+ value.tuman_nomi +'">'+ value.tuman_nomi +'</option>');
                             });
                         }
                     });
