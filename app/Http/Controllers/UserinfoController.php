@@ -19,7 +19,7 @@ class UserInfoController extends Controller
      */
     public function index()
     {
-        $userinfos = UserInfo::latest()->paginate(20);
+        $userinfos = UserInfo::paginate(20);
 
         return view('admin.userinfo.index',['userinfos'=>$userinfos]);
     }
