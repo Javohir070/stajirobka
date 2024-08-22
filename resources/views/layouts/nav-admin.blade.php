@@ -53,6 +53,42 @@
                 <div class="side-menu__title"> Yakuniy hisoboti </div>
             </a>
         </li> -->
+
+        <li>
+            <a href="javascript:;" class="side-menu">
+                <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+                <div class="side-menu__title">  Tashkilotlar <i data-feather="chevron-down"
+                        class="side-menu__sub-icon"></i> </div>
+            </a>
+            <ul class="">
+
+                
+
+                <li>
+                    <a href="#" class="side-menu ">
+                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <div class="side-menu__title"> OTM </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="side-menu ">
+                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <div class="side-menu__title"> ITM </div>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </li>
+
+        <a href="#" class="side-menu ">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Viloyatlar </div>
+            </a>
+        </li>
+
+
     @endrole
     
    

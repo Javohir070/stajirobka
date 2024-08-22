@@ -21,7 +21,7 @@
                                         <i data-feather="file-text" class="report-box__icon text-theme-10"></i>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">50</div>
-                                    <div class="text-base text-gray-600 mt-1">Tashkilotlar</div>
+                                    <div class="text-base text-gray-600 mt-1">Stajirovkaga yuborilganlar</div>
                                 </div>
                             </div>
                         </a>
@@ -34,7 +34,7 @@
                                         <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">501</div>
-                                    <div class="text-base text-gray-600 mt-1">Ilmiy loyhalar</div>
+                                    <div class="text-base text-gray-600 mt-1">Fan yo'nalish bo'yicha</div>
                                 </div>
                             </div>
                         </a>
@@ -47,12 +47,12 @@
                                         <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">501</div>
-                                    <div class="text-base text-gray-600 mt-1"> Xo'jalik shartnomalari </div>
+                                    <div class="text-base text-gray-600 mt-1"> Stajirovka o'tagan chet davlatlar </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                    <!-- <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
                         <a href="#">
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
