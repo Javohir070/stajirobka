@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/searchxodim', [XodimlarController::class, 'searchEmployees'])->name('searchxodim');
     Route::get('/userall', [UserInfoController::class, 'userall'])->name('userall');
     Route::get('/tashkilotlar', [ViloyatController::class, 'tashkilotlar'])->name('tashkilotlar');
+    Route::get('/otm', [ViloyatController::class, 'otm'])->name('otm.index');
+    Route::get('/itm', [ViloyatController::class, 'itm'])->name('itm.index');
    
     Route::resources([
         'xodimlar' => XodimlarController::class,
