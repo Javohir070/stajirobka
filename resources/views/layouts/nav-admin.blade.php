@@ -32,6 +32,7 @@
                 <div class="side-menu__title"> Yosh olim to‘g‘risida ma’lumot </div>
             </a>
         </li>
+
         <!-- <li>
             <a href="{{ route('organizationinfo.index') }}" class="side-menu side-menu{{ request()->is('organizationinfo*') ? '--active':'' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
@@ -58,7 +59,7 @@
             </a>
         </li> -->
 
-        <li>
+        <!-- <li>
             <a href="javascript:;" class="side-menu">
                 <div class="side-menu__icon"> <i data-feather="box"></i> </div>
                 <div class="side-menu__title"> Tashkilotlar <i data-feather="chevron-down"
@@ -84,6 +85,13 @@
 
 
             </ul>
+        </li> -->
+
+        <li>
+            <a href="{{ route('tashkilotlar') }}" class="side-menu ">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Tashkilotlar </div>
+            </a>
         </li>
 
         <li>

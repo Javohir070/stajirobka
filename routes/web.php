@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/searchuser', [UserController::class, 'searchuser'])->name('searchuser');
     Route::get('/searchxodim', [XodimlarController::class, 'searchEmployees'])->name('searchxodim');
     Route::get('/userall', [UserInfoController::class, 'userall'])->name('userall');
+    Route::get('/tashkilotlar', [ViloyatController::class, 'tashkilotlar'])->name('tashkilotlar');
    
     Route::resources([
         'xodimlar' => XodimlarController::class,

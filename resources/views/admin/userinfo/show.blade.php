@@ -278,7 +278,7 @@
                         <tr>
                             <!-- <th class="border border-2">6</th> -->
                             <td class="border border-2">{{ $internshipinfo->practice_topic }}</td>
-                            <td class="border border-2">{{ $internshipinfo->start_date }}</td>
+                            <td class="border border-2">{{  \Carbon\Carbon::parse($internshipinfo->start_date)->format('d-m-Y') }}</td>
                         </tr>
                         <tr class="bg-gray-200">
                             <!-- <th class="border border-2">5</th> -->
@@ -287,7 +287,7 @@
                         </tr>
                         <tr>
                             <!-- <th class="border border-2">6</th> -->
-                            <td class="border border-2">{{ $internshipinfo->end_date }}</td>
+                            <td class="border border-2">{{ \Carbon\Carbon::parse($internshipinfo->end_date)->format('d-m-Y') }}</td>
                             <td class="border border-2">{{ $internshipinfo->age }}</td>
                         </tr>
                     </tbody>
@@ -612,7 +612,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->tracking_decision_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->tracking_decision_date }}</td>
+                        <td class="border border-2">{{  \Carbon\Carbon::parse($internshipfile->tracking_decision_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->
@@ -622,7 +622,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->special_expert_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->special_expert_date }}</td>
+                        <td class="border border-2">{{ \Carbon\Carbon::parse($internshipfile->special_expert_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->
@@ -632,7 +632,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->agency_order_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->agency_order_date }}</td>
+                        <td class="border border-2">{{  \Carbon\Carbon::parse($internshipfile->agency_order_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->
@@ -642,7 +642,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->contract_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->contract_date }}</td>
+                        <td class="border border-2">{{  \Carbon\Carbon::parse($internshipfile->contract_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->
@@ -661,7 +661,7 @@
                     </tr>
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
-                        <td class="border border-2">{{ $internshipfile->date }}</td>
+                        <td class="border border-2">{{  \Carbon\Carbon::parse($internshipfile->date)->format('d-m-Y') }}</td>
                         <td class="border border-2">{{ $internshipfile->total_funding_amount }}</td>
                     </tr>
                     <tr class="bg-gray-200">
@@ -672,7 +672,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->financial_letter_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->financial_letter_date }}</td>
+                        <td class="border border-2">{{ \Carbon\Carbon::parse($internshipfile->financial_letter_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->
@@ -682,7 +682,7 @@
                     <tr>
                         <!-- <th class="border border-2">6</th> -->
                         <td class="border border-2">{{ $internshipfile->scientific_letter_number }}</td>
-                        <td class="border border-2">{{ $internshipfile->scientific_letter_date }}</td>
+                        <td class="border border-2">{{  \Carbon\Carbon::parse($internshipfile->scientific_letter_date)->format('d-m-Y') }}</td>
                     </tr>
                     <tr class="bg-gray-200">
                         <!-- <th class="border border-2">5</th> -->

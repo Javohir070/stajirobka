@@ -142,7 +142,7 @@
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Agenlik Maxsus ekspert guruhi qarori
                         sanasi
                     </label>
-                    <input type="text" name="special_expert_date" value="{{ old('special_expert_date') }}"
+                    <input type="date" name="special_expert_date" value="{{ old('special_expert_date') }}"
                         class="input w-full border mt-2" required="">
                     @error('special_expert_date')
                         <div class="error">{{ $message }}</div>
