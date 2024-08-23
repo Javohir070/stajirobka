@@ -12,6 +12,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ViloyatController;
 use App\Http\Controllers\XodimlarController;
 
 /*
@@ -54,7 +55,8 @@ Route::middleware('auth')->group(function () {
         'organizationinfo' => OrganizationInfoController::class,
         'internshipinfo' => InternshipInfoController::class,
         'internshipfile' => InternshipFileController::class,
-        'finalreport' => FinalReportController::class
+        'finalreport' => FinalReportController::class,
+        'viloyat' => ViloyatController::class
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {
