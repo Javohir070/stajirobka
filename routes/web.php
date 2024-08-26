@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\FinalReportController;
+use App\Http\Controllers\HigherorganizationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InternshipFileController;
 use App\Http\Controllers\InternshipInfoController;
+use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\OrganizationInfoController;
+use App\Http\Controllers\ScienceController;
 use App\Http\Controllers\UserInfoController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +15,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\ViloyatController;
 use App\Http\Controllers\XodimlarController;
 
@@ -59,7 +63,11 @@ Route::middleware('auth')->group(function () {
         'internshipinfo' => InternshipInfoController::class,
         'internshipfile' => InternshipFileController::class,
         'finalreport' => FinalReportController::class,
-        'viloyat' => ViloyatController::class
+        'viloyat' => ViloyatController::class,
+        'organization' => OrganizationController::class,
+        'state' => StateController::class,
+        'science' => ScienceController::class,
+        'higherorganization' => HigherorganizationController::class
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {

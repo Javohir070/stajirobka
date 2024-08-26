@@ -4,11 +4,11 @@
     <head>
         <meta charset="utf-8">
         <link href="/admin/dist/images/logo.png" rel="shortcut icon">
-        <meta name="viewport" content="Ilmiy-innovatsion faoliyat monitoringi tizimi">
-        <meta name="description" content="Ilmiy-innovatsion faoliyat monitoringi tizimi">
-        <meta name="keywords" content="Ilmiy-innovatsion faoliyat monitoringi tizimi">
+        <meta name="viewport" content="Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi">
+        <meta name="description" content="Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi">
+        <meta name="keywords" content="Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi">
         <meta name="author" content="LEFT4CODE">
-        <title>Ilmiy-innovatsion faoliyat monitoringi tizimi </title>
+        <title>Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi </title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="/admin/dist/css/app.css" />
         
@@ -20,7 +20,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Ilmiy-innovatsion faoliyat monitoringi tizimi" class="w-6" src="/admin/dist/images/logo.png">
+                    <img alt="Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi" class="w-6" src="/admin/dist/images/logo.png">
                 </a>
                 <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
