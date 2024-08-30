@@ -6441,7 +6441,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .login:before {
   content: "";
   margin-left: -48%;
-  background-image: url(../images/bg-login-page.svg);
+  background-image: url(../images/BG332.png);
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right;

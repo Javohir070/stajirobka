@@ -52,6 +52,35 @@
                             </div>
                         </a>
                     </div>
+
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                        <a href="#">
+                            <div class="report-box zoom-in">
+                                <div class="box p-5">
+                                    <div class="flex">
+                                        <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
+                                    </div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $tashkilotlar }}</div>
+                                    <div class="text-base text-gray-600 mt-1"> Tashkilotlar </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
+                        <a href="#">
+                            <div class="report-box zoom-in">
+                                <div class="box p-5">
+                                    <div class="flex">
+                                        <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
+                                    </div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $higherorganization }}</div>
+                                    <div class="text-base text-gray-600 mt-1"> Yuqori turuvchi muassasalar </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                     <!-- <div class="col-span-12 sm:col-span-6 xl:col-span-4 intro-y">
                         <a href="#">
                             <div class="report-box zoom-in">
