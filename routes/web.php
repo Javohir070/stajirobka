@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdditionalfundingController;
 use App\Http\Controllers\FinalReportController;
 use App\Http\Controllers\HigherorganizationController;
 use App\Http\Controllers\HomeController;
@@ -48,6 +49,18 @@ Route::middleware('auth')->group(function () {
     // Route::get('/reformat-phones', [XodimlarController::class, 'reformatPhones']);
 });
 Route::middleware('auth')->group(function () {
+    // excel uchun import qilish uchun url
+    Route::post('/higherorganizationimport',[HigherorganizationController::class, 'higherorganization_import'])->name('higherorganization.import');
+    Route::post('/state-import',[StateController::class, 'state_import'])->name('state.import');
+    Route::post('/organization-import',[OrganizationController::class, 'organization_import'])->name('organization.import');
+    Route::post('/science-import',[ScienceController::class, 'science_import'])->name('science.import');
+    Route::post('/userinfo-import',[UserInfoController::class, 'userinfo_import'])->name('userinfo.import');
+    Route::post('/organizationinfo-import',[OrganizationInfoController::class, 'organizationinfo_import'])->name('organizationinfo.import');
+    Route::post('/internshipinfo-import',[InternshipInfoController::class, 'internshipinfo_import'])->name('internshipinfo.import');
+    //tugashi excel uchun import qilish uchun url
+
+
+
     Route::get('/searchxodimlar', [XodimlarController::class, 'searchxodimlar'])->name('searchxodimlar');
     Route::get('/searchuser', [UserController::class, 'searchuser'])->name('searchuser');
     Route::get('/searchxodim', [XodimlarController::class, 'searchEmployees'])->name('searchxodim');
@@ -67,7 +80,8 @@ Route::middleware('auth')->group(function () {
         'organization' => OrganizationController::class,
         'state' => StateController::class,
         'science' => ScienceController::class,
-        'higherorganization' => HigherorganizationController::class
+        'higherorganization' => HigherorganizationController::class,
+        'additionalfunding' => AdditionalfundingController::class
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {

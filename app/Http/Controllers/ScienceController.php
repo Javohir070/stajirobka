@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ScienceEmport;
 use App\Models\Science;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ScienceController extends Controller
 {
@@ -75,5 +77,16 @@ class ScienceController extends Controller
         $science->delete();
 
         return redirect()->back();
+    }
+
+    public function science_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+        
+        Excel::import(new ScienceEmport, $request->file('file'));
+        
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

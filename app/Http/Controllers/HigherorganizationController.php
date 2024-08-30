@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\HigherorganizationEmport;
 use App\Models\Higherorganization;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HigherorganizationController extends Controller
 {
@@ -74,5 +76,17 @@ class HigherorganizationController extends Controller
         $higherorganization->delete();
 
         return redirect()->back();
+    }
+
+
+    public function higherorganization_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        Excel::import(new HigherorganizationEmport, $request->file('file'));
+
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

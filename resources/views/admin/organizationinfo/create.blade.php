@@ -45,11 +45,11 @@
 
                         <option value="">tanlov turini tanlang</option>
 
-                        <option value="Birinchi tanlov">Birinchi tanlov </option>
+                        <option value="1">Birinchi tanlov </option>
 
-                        <option value="Ikkinchi tanlov">Ikkinchi tanlov</option>
+                        <option value="2">Ikkinchi tanlov</option>
 
-                        <option value="Uchinchi tanlov">Uchinchi tanlov</option>
+                        <option value="3">Uchinchi tanlov</option>
 
                     </select> 
                     @error('order_number')
@@ -61,8 +61,15 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Yuqori turuvchi muassasa
                     </label>
-                    <input type="text" name="higher_organization" value="{{ old('higher_organization') }}" class="input w-full border mt-2" required="">
-                    @error('higher_organization')
+                    <select name="higherorganization_id" value="{{ old('higherorganization_id') }}" id="science-sub-category" class="input border w-full mt-2" required="">
+
+                        <option value="">muassasa turini tanlang</option>
+                        @foreach ($higherorganizations as $higherorganization )
+                            <option value="{{ $higherorganization->id }}">{{ $higherorganization->name }}</option>
+                        @endforeach
+
+                    </select>
+                    @error('higherorganization_id')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -89,8 +96,16 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Muassasa nomi
                     </label>
-                    <input type="text" name="organization_name" value="{{ old('organization_name') }}" class="input w-full border mt-2" required="">
-                    @error('organization_name')
+                    <select name="organization_id" value="{{ old('organization_id') }}" id="science-sub-category" class="input border w-full mt-2" required="">
+
+                        <option value="">muassasa turini tanlang</option>
+                        @foreach ($organizations as $organization )
+                            <option value="{{ $organization->id }}">{{ $organization->name }}</option>
+                        @endforeach
+
+                    </select> 
+
+                    @error('organization_id')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorelUserinfoRequest;
 use App\Http\Requests\UpdateUserinfoRequest;
+use App\Imports\UserInfoEmport;
 use App\Models\FinalReport;
 use App\Models\InternshipFile;
 use App\Models\InternshipInfo;
@@ -11,6 +12,7 @@ use App\Models\OrganizationInfo;
 use App\Models\UserInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserInfoController extends Controller
 {
@@ -69,6 +71,7 @@ class UserInfoController extends Controller
         $internshipinfos = InternshipInfo::where('user_info_id', $userinfoId)->get();
         $internshipfiles = InternshipFile::where('user_info_id', $userinfoId)->get(); 
         $finalreports = FinalReport::where('user_info_id', $userinfoId)->get();
+
         return view('admin.userinfo.show', [
             'userinfo' => $userinfo,
             'organizationinfos' => $organizationinfos,
@@ -121,5 +124,16 @@ class UserInfoController extends Controller
         }
         $userinfo->delete();
         return redirect()->back()->with('status',"Ma'lumotlar muvaffaqiyatli o'chirildi.");
+    }
+
+    public function userinfo_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+        
+        Excel::import(new UserInfoEmport, $request->file('file'));
+        
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

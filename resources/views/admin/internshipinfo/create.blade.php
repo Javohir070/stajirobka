@@ -121,8 +121,16 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Xorijiy mamlakat
                     </label>
-                    <input type="text" name="foreign_country" value="{{ old('foreign_country') }}" class="input w-full border mt-2" required="">
-                    @error('foreign_country')
+                    <select name="state_id" value="{{ old('state_id') }}" id="science-sub-category" class="input border w-full mt-2" required="">
+                   
+                       <option value="">Xorijiy mamlakatni tanlang</option>
+
+                        @foreach ($states as $state )
+                            <option value="{{ $state->id }}">{{ $state->name }}</option>
+                        @endforeach
+
+                    </select> 
+                    @error('state_id')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
@@ -141,8 +149,15 @@
                     <label class="flex flex-col sm:flex-row"> <span
                             class="mt-1 mr-1 sm:mt-0 text-xs text-red-600">*</span> Stajirovka yo‘nalishi
                     </label>
-                    <input type="text" name="direction_of_practice" value="{{ old('direction_of_practice') }}" class="input w-full border mt-2" required="">
-                    @error('direction_of_practice')
+                    <select name="science_id" value="{{ old('science_id') }}" id="science-sub-category" class="input border w-full mt-2" required="">
+
+                        <option value="">Stajirovka yo‘nalishini tanlang</option>
+                        @foreach ($sciences as $science )
+                            <option value="{{ $science->id }}">{{ $science->name }}</option>
+                        @endforeach
+
+                    </select> 
+                    @error('science_id')
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>

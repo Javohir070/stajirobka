@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorelInternshipInfoRequest;
+use App\Imports\InternshipInfoEmport;
 use App\Models\InternshipInfo;
+use App\Models\Science;
+use App\Models\State;
 use App\Models\UserInfo;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InternshipInfoController extends Controller
 {
@@ -25,7 +29,13 @@ class InternshipInfoController extends Controller
     public function create()
     {
         $userinfos = UserInfo::all();
-        return view('admin.internshipinfo.create', ['userinfos' => $userinfos]);
+        $states = State::all();
+        $sciences = Science::all();   
+        return view('admin.internshipinfo.create', [
+            'userinfos' => $userinfos,
+            'states' => $states,
+            'sciences' => $sciences
+        ]);
     }
 
     /**
@@ -36,14 +46,14 @@ class InternshipInfoController extends Controller
 
         InternshipInfo::create([
             "user_info_id" => $request->user_info_id,
+            "science_id" => $request->science_id,
+            "state_id" => $request->state_id,
             "order_number" => $request->order_number,
             "selection_type" => $request->selection_type,
             "selection_year" => $request->selection_year,
             "year_funded" => $request->year_funded,
             "year_of_dispatch" => $request->year_of_dispatch,
-            "foreign_country" => $request->foreign_country,
             "receiving_organization" => $request->receiving_organization,
-            "direction_of_practice" => $request->direction_of_practice,
             "practice_topic" => $request->practice_topic,
             "start_date" => $request->start_date,
             "end_date" => $request->end_date,
@@ -78,14 +88,14 @@ class InternshipInfoController extends Controller
     {
         $internshipinfo->update([
             "user_info_id" => $request->user_info_id,
+            "science_id" => $request->science_id,
+            "state_id" => $request->state_id,
             "order_number" => $request->order_number,
             "selection_type" => $request->selection_type,
             "selection_year" => $request->selection_year,
             "year_funded" => $request->year_funded,
             "year_of_dispatch" => $request->year_of_dispatch,
-            "foreign_country" => $request->foreign_country,
             "receiving_organization" => $request->receiving_organization,
-            "direction_of_practice" => $request->direction_of_practice,
             "practice_topic" => $request->practice_topic,
             "start_date" => $request->start_date,
             "end_date" => $request->end_date,
@@ -104,5 +114,16 @@ class InternshipInfoController extends Controller
         $internshipinfo->delete();
 
         return redirect()->back()->with('status',"Ma'lumotlar muvaffaqiyatli o'chirildi.");
+    }
+
+    public function internshipinfo_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+        
+        Excel::import(new InternshipInfoEmport, $request->file('file'));
+        
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

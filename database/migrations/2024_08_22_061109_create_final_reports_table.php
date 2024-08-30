@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('final_reports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
-            $table->string('order_number');
-            $table->string('follow_up_letter');
-            $table->string('council_decision');
-            $table->string('scientific_report');
-            $table->string('financial_reporting');
+            $table->string('order_number')->nullable();
+            $table->string('follow_up_letter')->nullable();
+            $table->string('council_decision')->nullable();
+            $table->string('scientific_report')->nullable();
+            $table->string('financial_reporting')->nullable();
             $table->timestamps();
         });
     }

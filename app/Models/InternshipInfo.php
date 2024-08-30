@@ -11,22 +11,34 @@ class InternshipInfo extends Model
 
     protected $fillable =[
         'user_info_id',
+        'state_id',
+        'science_id',
         'order_number',
         'selection_type',
         'selection_year',
         'year_funded',
         'year_of_dispatch',
-        'foreign_country',
         'receiving_organization',
-        'direction_of_practice',
         'practice_topic',
         'start_date',
         'end_date',
-        'age'
+        'age',
+        'xorijiy_mamlakat',
+        'stajirovka_yon'
     ];
 
     public function userinfo(){
         return $this->belongsTo(UserInfo::class, 'user_info_id');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public function science()
+    {
+        return $this->belongsTo(Science::class);
     }
 
     

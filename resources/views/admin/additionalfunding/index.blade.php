@@ -5,7 +5,7 @@
 <div class="content">
     <div class="flex justify-between align-center mt-10">
 
-        <h2 class="intro-y text-lg font-medium">Stajirovka yo‘nalishi</h2>
+        <h2 class="intro-y text-lg font-medium">Qo‘shimcha moliyalashtirilgan ma'lumotlar</h2>
 
         <!-- <a href="{{ route("xodimlar.create") }}" class="button w-24 bg-theme-1 text-white">
             Qo'shish
@@ -21,7 +21,7 @@
         </div>
         <div>
             <div> 
-                <a href="{{ route("science.create") }}" class="button w-24 bg-theme-1 text-white">
+                <a href="{{ route("additionalfunding.create") }}" class="button w-24 bg-theme-1 text-white">
                     Qo'shish
                 </a>
                 <a href="javascript:;" data-target="#science-paper-create-modal" data-toggle="modal" 
@@ -42,22 +42,35 @@
                 <thead>
                     <tr>
                         <th class="whitespace-no-wrap">№</th>
-                        <th class="whitespace-no-wrap">Nomi</th>
+                        <th class="whitespace-no-wrap">F.I.Sh</th>
+                        <th class="whitespace-no-wrap">Yuqori turuvchi muassasa</th>
+                        <th class="whitespace-no-wrap">Muassasa turi</th>
+                        <th class="whitespace-no-wrap">Muassasa nomi</th>
                         <th class="whitespace-no-wrap text-center">Harakat</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($sciences as $science )
+                    @foreach ($additionalfundings as $additionalfunding )
 
                     <tr class="intro-x">
                         <td>{{$loop->index+1}}</td>
                         <td>
-                            <a href="#" class="font-medium">{{ $science->name }} </a>
+                            <a href="#" class="font-medium">{{ $additionalfunding->userinfo->firs_name }} {{ $additionalfunding->userinfo->last_name }}</a>
+                        </td>
+                        <td>
+                            <a href="" class="font-medium ">{{ $additionalfunding->higher_organization }}</a>
+                        </td>
+                        <td>
+                            <a href="" class="font-medium ">{{ $additionalfunding->organization_type }}</a>
+                        </td>
+                        
+                        <td>
+                            <a href="" class="font-medium ">{{ $additionalfunding->organization_name  }} </a>
                         </td>
                         <td class="table-report__action w-56">
                             <div class="flex justify-center items-center">
-                                <a class="flex science-update-action items-center mr-3" href="{{ route('science.edit',['science'=>$science->id]) }}" data-id="2978" data-name="sdfd" data-file="/files/papers/4735cda0-a7a3-4a45-bd93-0bc013b857dc.png" data-filename="Screenshot from 2023-04-17 16-23-56.png" data-type="66" data-date="None" data-doi="" data-publisher="" data-description="None" data-authors-count="None" data-toggle="modal" data-target="#science-paper-update-modal">
+                                <a class="flex science-update-action items-center mr-3" href="{{ route('additionalfunding.edit',['additionalfunding'=>$additionalfunding->id]) }}" data-id="2978" data-name="sdfd" data-file="/files/papers/4735cda0-a7a3-4a45-bd93-0bc013b857dc.png" data-filename="Screenshot from 2023-04-17 16-23-56.png" data-type="66" data-date="None" data-doi="" data-publisher="" data-description="None" data-authors-count="None" data-toggle="modal" data-target="#science-paper-update-modal">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square w-4 h-4 mr-1">
                                         <polyline points="9 11 12 14 22 4"></polyline>
                                         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
@@ -65,7 +78,7 @@
                                     Tahrirlash
                                 </a>
 
-                                <a class="flex science-update-action items-center mr-3" href="{{ route('science.show',['science'=>$science->id]) }}" data-id="2978" data-name="sdfd" data-file="/files/papers/4735cda0-a7a3-4a45-bd93-0bc013b857dc.png" data-filename="Screenshot from 2023-04-17 16-23-56.png" data-type="66" data-date="None" data-doi="" data-publisher="" data-description="None" data-authors-count="None" data-toggle="modal" data-target="#science-paper-update-modal">
+                                <a class="flex science-update-action items-center mr-3" href="{{ route('additionalfunding.show',['additionalfunding'=>$additionalfunding->id]) }}" data-id="2978" data-name="sdfd" data-file="/files/papers/4735cda0-a7a3-4a45-bd93-0bc013b857dc.png" data-filename="Screenshot from 2023-04-17 16-23-56.png" data-type="66" data-date="None" data-doi="" data-publisher="" data-description="None" data-authors-count="None" data-toggle="modal" data-target="#science-paper-update-modal">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square w-4 h-4 mr-1">
                                         <polyline points="9 11 12 14 22 4"></polyline>
                                         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
@@ -73,7 +86,7 @@
                                     Ko'rish
                                 </a>
                                 
-                                <form action="{{ route('science.destroy',['science'=>$science->id]) }}" method="post" onsubmit="return confirm('Rostan Ochirishni hohlaysizmi?');">
+                                <form action="{{ route('additionalfunding.destroy',['additionalfunding'=>$additionalfunding->id]) }}" method="post" onsubmit="return confirm('Rostan Ochirishni hohlaysizmi?');">
                                     <button type="submit" class="flex delete-action items-center text-theme-6" >
                                     @csrf
                                     @method("DELETE")
@@ -96,12 +109,11 @@
             </table>
         </div>
         <div class="intro-y flex flex-wrap sm:flex-row sm:flex-no-wrap items-center mt-3">
-            {{$sciences->links()}}
+            {{$additionalfundings->links()}}
         </div>
 
     </div>
 </div>
-
 
 <div class="modal" id="science-paper-create-modal">
     <div class="modal__content modal__content--xl">
@@ -109,7 +121,7 @@
 
             <div class="intro-y col-span-12 flex flex-wrap sm:flex-no-wrap items-center mt-2">
                 <div class="w-full mt-3 sm:mt-0 sm:ml-auto md:ml-0">
-                    <form id="science-paper-create-form" method="POST" action="{{ route('science.import') }}"
+                    <form id="science-paper-create-form" method="POST" action="{{ route('higherorganization.import') }}"
                         class="validate-form" enctype="multipart/form-data" novalidate="novalidate">
                         @csrf
                         <div class="grid grid-cols-12 gap-2">

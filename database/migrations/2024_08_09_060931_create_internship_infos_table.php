@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('internship_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_info_id')->constrained('user_infos')->cascadeOnDelete();
-            $table->string('order_number');
-            $table->string('selection_type',255);
-            $table->string('selection_year',255);
-            $table->string('year_funded');
-            $table->string('year_of_dispatch');
-            $table->string('foreign_country');
-            $table->string('receiving_organization');
-            $table->string('direction_of_practice');
-            $table->string('practice_topic');
-            $table->string('start_date');
-            $table->string('end_date');
-            $table->integer('age');
+            $table->foreignId('state_id')->constrained();
+            $table->foreignId('science_id')->constrained();
+            $table->string('order_number')->nullable();
+            $table->string('selection_type',255)->nullable();
+            $table->string('selection_year',255)->nullable();
+            $table->string('year_funded')->nullable();
+            $table->string('year_of_dispatch')->nullable();
+            $table->string('receiving_organization')->nullable();
+            $table->string('practice_topic')->nullable();
+            $table->string('start_date')->nullable();
+            $table->string('end_date')->nullable();
+            $table->integer('age')->nullable();
             $table->timestamps();
         });
     }

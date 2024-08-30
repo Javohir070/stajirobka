@@ -37,24 +37,31 @@
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Ishtirok etgan tanlovlar to‘g‘risida ma’lumot </div>
             </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <a href="{{ route('internshipinfo.index') }}" class="side-menu side-menu{{ request()->is('internshipinfo*') ? '--active':'' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Tanlov to‘g‘risida ma’lumot </div>
             </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <a href="{{ route('internshipfile.index') }}" class="side-menu side-menu{{ request()->is('internshipfile*') ? '--active':'' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Moliyalashtirish to‘g‘risida ma’lumot </div>
             </a>
-        </li>
+        </li> -->
 
-        <li>
+        <!-- <li>
             <a href="{{ route('finalreport.index') }}" class="side-menu side-menu{{ request()->is('finalreport*') ? '--active':'' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Yakuniy hisoboti </div>
+            </a>
+        </li> -->
+
+        <!-- <li>
+            <a href="{{ route('additionalfunding.index') }}" class="side-menu side-menu{{ request()->is('finalreport*') ? '--active':'' }}">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Qo‘shimcha moliyalashtirilgan </div>
             </a>
         </li> -->
 
@@ -93,12 +100,12 @@
             </a>
         </li>
 
-        <li>
+        <!-- <li>
             <a href="{{ route('viloyat.index') }}" class="side-menu side-menu{{ request()->is('viloyat*') ? '--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Viloyatlar </div>
             </a>
-        </li>
+        </li> -->
 
         <li>
             <a href="{{ route('higherorganization.index') }}" class="side-menu side-menu{{ request()->is('higherorganization*') ? '--active' : '' }}">

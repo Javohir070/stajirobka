@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\StateEmport;
 use App\Models\State;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StateController extends Controller
 {
@@ -75,5 +77,19 @@ class StateController extends Controller
         $state->delete();
 
         return redirect()->back();
+    }
+
+
+    public function state_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+
+        Excel::import(new StateEmport, $request->file('file'));
+
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
+        
     }
 }

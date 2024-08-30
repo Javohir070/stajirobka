@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorelOrganizationInfoRequest;
+use App\Imports\OrganizationInfoEmport;
+use App\Models\Higherorganization;
+use App\Models\Organization;
 use App\Models\OrganizationInfo;
 use App\Models\Tuman;
 use App\Models\UserInfo;
 use App\Models\Viloyat;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrganizationInfoController extends Controller
 {
@@ -28,7 +32,14 @@ class OrganizationInfoController extends Controller
     {
         $viloyatlar = Viloyat::all();
         $userinfos = UserInfo::all();
-        return view('admin.organizationinfo.create',['userinfos' => $userinfos, 'viloyatlar'=>$viloyatlar]);
+        $higherorganizations = Higherorganization::all();
+        $organizations = Organization::all();
+        return view('admin.organizationinfo.create',[
+            'userinfos' => $userinfos,
+            'viloyatlar' => $viloyatlar, 
+            'higherorganizations' => $higherorganizations,
+            'organizations' => $organizations
+        ]);
     }
 
     /**
@@ -39,10 +50,10 @@ class OrganizationInfoController extends Controller
         
         OrganizationInfo::create([
             "user_info_id" => $request->user_info_id,
+            "higherorganization_id" => $request->higherorganization_id,
+            "organization_id" => $request->organization_id,
             "order_number" => $request->order_number,
-            "higher_organization" => $request->higher_organization,
             "organization_type" => $request->organization_type,
-            "organization_name" => $request->organization_name,
             "position" => $request->position,
             "STIR" => $request->STIR,
             "region" => $request->region,
@@ -77,10 +88,10 @@ class OrganizationInfoController extends Controller
     {
         $organizationinfo->update([
             "user_info_id" => $request->user_info_id,
+            "higherorganization_id" => $request->higherorganization_id,
+            "organization_id" => $request->organization_id,
             "order_number" => $request->order_number,
-            "higher_organization" => $request->higher_organization,
             "organization_type" => $request->organization_type,
-            "organization_name" => $request->organization_name,
             "position" => $request->position,
             "STIR" => $request->STIR,
             "region" => $request->region,
@@ -106,5 +117,16 @@ class OrganizationInfoController extends Controller
     {
         $tumanlar = Tuman::where('viloyat_id', $request->viloyat_id)->get();
         return response()->json($tumanlar);
+    }
+
+    public function organizationinfo_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+        
+        Excel::import(new OrganizationInfoEmport, $request->file('file'));
+        
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\OrganizationEmport;
 use App\Models\Organization;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrganizationController extends Controller
 {
@@ -75,5 +77,17 @@ class OrganizationController extends Controller
         $organization->delete();
 
         return redirect()->back();
+    }
+
+    public function organization_import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        
+        Excel::import(new OrganizationEmport, $request->file('file'));
+
+        return redirect()->back()->with('status', 'Xodimlar muvaffaqiyatli yuklandi!');
     }
 }

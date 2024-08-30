@@ -11,10 +11,12 @@ class OrganizationInfo extends Model
 
     protected $fillable = [
         'user_info_id',
+        'yuq_tashkilot',
+        'tashkilot',
+        'organization_id',
+        'higherorganization_id',
         'order_number',
-        'higher_organization',
         'organization_type',
-        'organization_name',
         'position',
         'STIR',
         'region',
@@ -23,6 +25,16 @@ class OrganizationInfo extends Model
 
     public function userinfo(){
         return $this->belongsTo(UserInfo::class, 'user_info_id');
+    }
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
+
+    public function higherorganization()
+    {
+        return $this->belongsTo(Higherorganization::class);
     }
 
 }
