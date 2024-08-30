@@ -7,7 +7,7 @@
             <div class="col-span-12 mt-8">
                 <div class="intro-y flex items-center h-10">
                     <h2 class="text-lg font-medium truncate mr-5">
-                        Tashkilot haqida qisqacha malumot
+                        Xorijiy stajerovkalar bo'yicha  ma'lumotlar bazasi
                     </h2>
                     <a href="" class="ml-auto flex text-theme-1"> <i data-feather="refresh-ccw" class="w-4 h-4 mr-3"></i>
                     Ma'lumotlarni qayta yuklash </a>
@@ -20,7 +20,7 @@
                                     <div class="flex">
                                         <i data-feather="file-text" class="report-box__icon text-theme-10"></i>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">50</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $stajirovka }}</div>
                                     <div class="text-base text-gray-600 mt-1">Stajirovkaga yuborilganlar</div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                     <div class="flex">
                                         <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">501</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $fanyonalish }}</div>
                                     <div class="text-base text-gray-600 mt-1">Fan yo'nalish bo'yicha</div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                     <div class="flex">
                                         <i data-feather="file-text" class="report-box__icon text-theme-3"></i>
                                     </div>
-                                    <div class="text-3xl font-bold leading-8 mt-6">501</div>
+                                    <div class="text-3xl font-bold leading-8 mt-6">{{ $chet_davlat }}</div>
                                     <div class="text-base text-gray-600 mt-1"> Stajirovka o'tagan chet davlatlar </div>
                                 </div>
                             </div>

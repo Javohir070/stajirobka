@@ -24,10 +24,10 @@ class InternshipInfoEmport implements ToModel
             'xorijiy_mamlakat' => $row[3],
             'stajirovka_yon' => $row[5],
             'receiving_organization' => $row[4],
-            'practice_topic' => $row[6],
-            'start_date' => $row[7],
-            'end_date' => $row[8],
-            'age' => $row[9],
+            'practice_topic' => $row[5],
+            'start_date' => $row[6],
+            'end_date' => $row[7],
+            'age' => $row[8],
         ]);
     }
 }
