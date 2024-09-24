@@ -124,7 +124,7 @@
         <li>
             <a href="{{ route('state.index') }}" class="side-menu side-menu{{ request()->is('state*') ? '--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
-                <div class="side-menu__title"> Xorijiy mamlakat </div>
+                <div class="side-menu__title"> Xorijiy tashkilotlar </div>
             </a>
         </li>
 

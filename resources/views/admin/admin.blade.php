@@ -22,7 +22,7 @@
                                         <i data-feather="file-text" class="report-box__icon text-theme-10"></i>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">{{ $otm }}</div>
-                                    <div class="text-base text-gray-600 mt-1">Oliy ta’lim</div>
+                                    <div class="text-base text-gray-600 mt-1">Oliy ta’lim muassasalari</div>
                                 </div>
                             </div>
                         </a>
@@ -35,7 +35,7 @@
                                         <i data-feather="file-text" class="report-box__icon text-theme-10"></i>
                                     </div>
                                     <div class="text-3xl font-bold leading-8 mt-6">{{ $itm }}</div>
-                                    <div class="text-base text-gray-600 mt-1">Ilmiy tadqiqot muassasi</div>
+                                    <div class="text-base text-gray-600 mt-1">Ilmiy tadqiqot muassasalari</div>
                                 </div>
                             </div>
                         </a>

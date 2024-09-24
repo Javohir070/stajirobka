@@ -351,7 +351,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
+                    <!-- <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
                         <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
                             <div class="absolute left-0 top-0 mt-3 ml-3">
                                 <input class="input border border-gray-500" type="checkbox">
@@ -532,7 +532,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             @empty
                 <div class="overflow-x-auto"
@@ -771,6 +771,7 @@
                     </div>
                 </div>
             @empty
+            
                 <div class="overflow-x-auto"
                     style="background-color: white;margin-top:30px;border-radius:8px;padding:30px 20px;">
                     <div style="display: flex;justify-content: space-between;">
@@ -929,6 +930,60 @@
                     </div>
                 </div>
             @empty
+            <div class="intro-y grid grid-cols-12 gap-3 sm:gap-6 mt-5">
+                    <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
+                        <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
+                            <div class="absolute left-0 top-0 mt-3 ml-3">
+                                <input class="input border border-gray-500" type="checkbox">
+                            </div>
+                            <a href="#" class="w-3/5 file__icon file__icon--file mx-auto">
+                                <div class="file__icon__file-name">PDF</div>
+                            </a>
+                            <a href="" class="block font-medium mt-4 text-center truncate">Ilmiy hisoboti</a>
+                            <div class="text-gray-600 text-xs text-center">2.2 MB</div>
+                            <div class="absolute top-0 right-0 mr-2 mt-2 dropdown ml-auto">
+                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"> <i data-feather="more-vertical"
+                                        class="w-5 h-5 text-gray-500"></i> </a>
+                                <div class="dropdown-box mt-5 absolute w-40 top-0 right-0 z-10">
+                                    <div class="dropdown-box__content box p-2">
+                                        <a href=""
+                                            class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">
+                                            <i data-feather="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                        <a href=""
+                                            class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">
+                                            <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y col-span-6 sm:col-span-4 md:col-span-3 xxl:col-span-2">
+                        <div class="file box rounded-md px-5 pt-8 pb-5 px-3 sm:px-5 relative zoom-in">
+                            <div class="absolute left-0 top-0 mt-3 ml-3">
+                                <input class="input border border-gray-500" type="checkbox">
+                            </div>
+                            <a href="" class="w-3/5 file__icon file__icon--file mx-auto">
+                                <div class="file__icon__file-name">PDF</div>
+                            </a>
+                            <a href="" class="block font-medium mt-4 text-center truncate">Moliyaviy hisobot</a>
+                            <div class="text-gray-600 text-xs text-center">2.2 MB</div>
+                            <div class="absolute top-0 right-0 mr-2 mt-2 dropdown ml-auto">
+                                <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"> <i data-feather="more-vertical"
+                                        class="w-5 h-5 text-gray-500"></i> </a>
+                                <div class="dropdown-box mt-5 absolute w-40 top-0 right-0 z-10">
+                                    <div class="dropdown-box__content box p-2">
+                                        <a href=""
+                                            class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">
+                                            <i data-feather="users" class="w-4 h-4 mr-2"></i> Share File </a>
+                                        <a href=""
+                                            class="flex items-center block p-2 transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">
+                                            <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="overflow-x-auto"
                     style="background-color: white;margin-top:30px;border-radius:8px;padding:30px 20px;">
                     <div style="display: flex;justify-content: space-between;">
