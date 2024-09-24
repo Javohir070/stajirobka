@@ -17,6 +17,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StateController;
+use App\Http\Controllers\StatementController;
 use App\Http\Controllers\ViloyatController;
 use App\Http\Controllers\XodimlarController;
 
@@ -68,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/tashkilotlar', [ViloyatController::class, 'tashkilotlar'])->name('tashkilotlar');
     Route::get('/otm', [ViloyatController::class, 'otm'])->name('otm.index');
     Route::get('/itm', [ViloyatController::class, 'itm'])->name('itm.index');
+    Route::get('bayon/{type}', [StatementController::class,'bayon'])->name('bayon.index');
    
     Route::resources([
         'xodimlar' => XodimlarController::class,
@@ -81,7 +83,8 @@ Route::middleware('auth')->group(function () {
         'state' => StateController::class,
         'science' => ScienceController::class,
         'higherorganization' => HigherorganizationController::class,
-        'additionalfunding' => AdditionalfundingController::class
+        'additionalfunding' => AdditionalfundingController::class,
+        'statement' => StatementController::class,
     ]);
 });
 Route::group(['middleware' => ['role:super-admin|admin']], function() {

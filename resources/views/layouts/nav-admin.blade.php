@@ -114,15 +114,15 @@
             </a>
         </li>
 
-        <li>
+        <!-- <li>
             <a href="{{ route('organization.index') }}" class="side-menu side-menu{{ request()->is('organization*') ? '--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Muassasa nomi </div>
             </a>
-        </li>
+        </li> -->
 
         <li>
-            <a href="{{ route('state.index') }}" class="side-menu side-menu{{ request()->is('state*') ? '--active' : '' }}">
+            <a href="{{ route('state.index') }}" class="side-menu side-menu{{ request()->is('state') ? '--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Xorijiy tashkilotlar </div>
             </a>
@@ -132,6 +132,13 @@
             <a href="{{ route('science.index') }}" class="side-menu side-menu{{ request()->is('science*') ? '--active' : '' }}">
                 <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                 <div class="side-menu__title"> Stajirovka yo‘nalishi </div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('statement.index') }}" class="side-menu side-menu{{ request()->is('statement*') ? '--active' : '' }}">
+                <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
+                <div class="side-menu__title"> Bayonlar</div>
             </a>
         </li>
 
